@@ -1,4 +1,4 @@
-## Backend software engineer test
+## Backend software engineer test : implementation of RUDP
 
 The principal objective of this project is to evaluate the applicant's ability to learn new skills on the fly, build reliable backend in adherence to best practices in different languages and colaborate with peer programers.
 
