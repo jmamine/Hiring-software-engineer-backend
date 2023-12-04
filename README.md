@@ -33,7 +33,7 @@ Both students looking for an internship at BIGmama and professionals looking for
 #### 3. Tests:
    - Add unit tests for different components of the package.
 
-#### 2. Examples:
+#### 4. Examples:
    - Include example codes for differents kinds of applications: peer-to-peer, server-client etc...
 
 
