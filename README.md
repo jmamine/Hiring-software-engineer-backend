@@ -24,7 +24,7 @@ Both students looking for an internship at BIGmama and professionals looking for
 
 #### 1. Package development:
    - The repository should be a package that could be used by application.
-   - The package language is not fixed, you can chose whatever you want (Python and GoLang are preffered).
+   - The package language is not fixed (yet), but you should either use Python (`asyncio` compatible preferably) or GoLang (built-in `net` package).
 
 #### 2. RUDP implementation:
    - The package should provide an API to create and use RUDP connections.
