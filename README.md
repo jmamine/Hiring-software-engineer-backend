@@ -74,6 +74,29 @@ Explore the Docker documentation and relevant API resources to ensure seamless i
 
 ## FAQ
 
+#### What type of tasks can be run ?
+
+- **Script Execution:** Execute custom scripts or commands within the Docker container. This could include running shell scripts, Python scripts, or any other executable code.
+
+- **Application Processes:** Run and manage specific applications or processes within the container. For example, a task could involve starting a web server, running a database process, or executing a background service.
+
+- **Data Processing:** Perform data processing tasks within the container. This might involve tasks like data transformation, analysis, or other computational processes.
+
+- **Scheduled Jobs:** Run tasks on a scheduled basis. For instance, a task could be scheduled to run daily, weekly, or at specific intervals to perform recurring operations.
+
+- **Automation Workflows:** Implement automation workflows within the container. Tasks could be designed to automate various processes, making use of different tools or services.
+
+- **Build and Deployment Processes:** Use containers to facilitate build and deployment processes. Tasks might involve building and packaging applications, deploying them to specific environments, or managing versioning.
+
+- **Testing and Quality Assurance:** Run automated tests within the container to ensure the quality of code or applications. This could include unit tests, integration tests, or end-to-end tests.
+
+- **Background Jobs:** Execute background jobs or asynchronous tasks within the container. This is useful for handling tasks that don't need to run in real-time and can be processed in the background.
+
+- **Task Dependencies:** Create tasks that have dependencies on other tasks. Ensure that the system can manage the order of execution and handle task dependencies effectively.
+
+- **Custom Workflows:** Allow users to define custom workflows by chaining multiple tasks together. This could involve designing a flexible and configurable system for defining and executing complex workflows.
+
+
 #### how many features should I work on ?
 doesn't matter, what important is the value of your contribution and it's quality, impress us !
 
