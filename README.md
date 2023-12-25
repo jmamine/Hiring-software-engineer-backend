@@ -6,7 +6,7 @@ The test involves creating a containerized task management system where tasks ar
 
 ## How does this work ?
 
-Candidates will concurrently work on a set of tasks related to the project. Once a candidate deems their contribution complete, they can submit a pull request. The team will review the contribution, provide feedback, and merge the changes if satisfactory. Completed tasks will be omitted, and new tasks will be assigned to other candidates. Candidates with merged changes will be invited for an interview with the team.
+Candidates will concurrently work on a set of tasks related to the project. Once a candidate deems their contribution complete, they can submit a pull request. The team will review the contribution, provide feedback, and merge the changes if satisfactory. Completed tasks will be omitted, and new tasks will be provided to other candidates to choose from. Candidates with merged changes will be invited for an interview with the team.
 
 
 ## Who can apply ?
@@ -16,36 +16,36 @@ This test is open to both students seeking an internship at BIGmama and professi
 
 ## Tasks
 
-#### 1. Containerized Task Execution:
+- [ ] Containerized Task Execution:
    - Design an API within the package to seamlessly create, manage, and execute tasks within Docker containers.
    - Utilize Docker Engine API to ensure tasks are containerized effectively.
    - Implement robust error handling and logging for containerized task execution.
 
-#### 2. Task Dependencies and Scheduling:
+- [ ] Task Dependencies and Scheduling:
    - Extend the system to handle task dependencies, allowing users to define the order of task execution.
    - Implement a scheduling mechanism for recurring tasks, providing flexibility for various use cases.
 
-#### 3. Plugin System for Extensibility:
+- [ ] Plugin System for Extensibility:
    - Develop a plugin system that empowers users to extend the functionality of the task management system.
    - Plugins should encapsulate specific features, allowing for easy integration of custom execution types, notifications, or storage options.
 
-#### 4. Real-time Monitoring and Notifications:
+- [ ] Real-time Monitoring and Notifications:
    - Implement real-time monitoring of task execution within containers.
    - Provide notification features to alert users about the status of their tasks.
 
-#### 5. Security Measures:
+- [ ] Security Measures:
    - Ensure the security of the system by implementing appropriate measures for user authentication and authorization.
    - Incorporate secure communication practices for API endpoints.
 
-#### 6. Unit and Integration Testing:
+- [ ] Unit and Integration Testing:
    - Develop comprehensive unit tests to validate the functionality of different components.
    - Include integration tests to ensure seamless interactions between various system modules.
 
-#### 7. Documentation and Examples:
+- [ ] Documentation and Examples:
    - Provide clear and comprehensive documentation for setting up, configuring, and running the backend system.
    - Include example code snippets and use cases to guide users in different scenarios, such as task automation and integration with existing applications.
 
-#### 8. Performance Optimization:
+- [ ] Performance Optimization:
    - Optimize the performance of the system to handle a large number of concurrent tasks.
    - Implement caching strategies and other optimizations to enhance overall responsiveness.
 
