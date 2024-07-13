@@ -99,25 +99,3 @@ def task_schedule_route(task_id):
     except Exception as e:
         logger.exception('An error occurred while scheduling task: %s', e)
         return jsonify({'error': 'An error occurred'}), 500
-    
-
-
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-         
-
-
-
-
-
