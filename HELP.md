@@ -14,10 +14,11 @@ This project is a backend application designed to manage and execute tasks withi
 
 1. Clone the repository: `git clone git@github.com:BIGmama-technology/Hiring-software-engineer-backend.git`.
 2. Navigate to the project directory: `cd Hiring-software-engineer-backend`.
-3. Install the required dependencies: `pip install -r requirements.txt`.
-4. open Docker Desktop.
-5. Run the application: `python run.py`.
-6. The application should now be running on http://localhost:5000.
+3. Copy the `.env.example` file to a new file named `.env`
+4. Install the required dependencies: `pip install -r requirements.txt`.
+5. open Docker Desktop.
+6. Run the application: `python run.py`.
+7. The application should now be running on http://localhost:5000.
 
 # API Endpoints Documentation
 
