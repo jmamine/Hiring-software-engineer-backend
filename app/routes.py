@@ -1,12 +1,23 @@
 # app/routes.py
 
-from flask import request, jsonify ,Blueprint
-from app import app
-from app.docker_utils import create_python_task,create_shell_task, execute_task, list_tasks, task_schedule, delete_task, stop_task ,start_python_task,start_powershell_task,task_docker_info
-from app.utils import upload_script
-
 import logging
 
+from flask import Blueprint, jsonify, request
+
+from app import app
+from app.docker_utils import (
+    create_python_task,
+    create_shell_task,
+    delete_task,
+    execute_task,
+    list_tasks,
+    start_powershell_task,
+    start_python_task,
+    stop_task,
+    task_docker_info,
+    task_schedule,
+)
+from app.utils import upload_script
 
 task_blueprint = Blueprint('task', __name__)
 

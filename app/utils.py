@@ -1,8 +1,10 @@
 
+import logging
 import os
 import uuid
-import logging
+
 from flask import jsonify
+
 from app import app
 
 # Setting up logging
@@ -39,14 +41,15 @@ def upload_script(request):
         else:
             requirements_filename = "requirements.txt"
             requirements_file_path = os.path.join(task_folder, requirements_filename)
-            # Create an empty file
             with open(requirements_file_path, 'w') as f:
                 pass
+            
+           
 
         # Returning task id
         return task_id
 
     # Handling exceptions
-    except Exception as e:
+    except Exception:
         logger.exception("Error occurred during script upload:")
         return jsonify({"error": "An error occurred during script upload"}), 500

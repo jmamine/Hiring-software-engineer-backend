@@ -1,13 +1,16 @@
 # app/docker_utils.py
 
-import io
-import os
 import base64
-import uuid
+import io
 import logging
-from flask import jsonify
-from app import scheduler, client , app 
+import os
+import uuid
+
 from apscheduler.triggers.cron import CronTrigger
+from flask import jsonify
+
+from app import app, client, scheduler
+
 # from app import logger 
 
 # Get logger
@@ -109,7 +112,7 @@ def execute_task(task_id):
         container = tasks[task_id]['container']
 
         # Start the container (if not already running)
-        if not container.status == 'running':
+        if container.status != 'running':
             start_container(task_id)
 
         return "Task executed successfully in Docker container!"
@@ -171,7 +174,7 @@ def task_schedule(task_id, cron_expression):
         # Define a function to start the container
 
         # Start the container (if not already running)
-        if not container.status == 'running':
+        if container.status != 'running':
              scheduler.add_job(start_container, CronTrigger.from_crontab(cron_expression), args=[task_id], id=task_id)
 
         return "Task executed successfully in Docker container!"
@@ -200,7 +203,7 @@ def start_powershell_task(task_id):
 
         
         # Create Dockerfile content for PowerShell
-        dockerfile_content = f'''
+        dockerfile_content = '''
             FROM mcr.microsoft.com/powershell
 
             # Set the working directory in the container
@@ -214,13 +217,14 @@ def start_powershell_task(task_id):
             '''
 
         # Write Dockerfile content to the task folder
+
         with open(os.path.join(task_folder, 'Dockerfile'), 'w') as dockerfile:
             dockerfile.write(dockerfile_content)
 
         # Build Docker image from the task folder
         image, _ = client.images.build(
             path=task_folder,
-            dockerfile=os.path.join(task_folder, 'Dockerfile'),
+            dockerfile ='Dockerfile',
             rm=True,
             tag=f"task_{task_id}"
         )
@@ -232,7 +236,7 @@ def start_powershell_task(task_id):
         tasks[task_id] = {'container': container, 'script_type': 'shell'}
 
         return jsonify({"message": f"Task {task_id} created successfully!", "script_type": "shell", "task_id": task_id})
-    except Exception as e:
+    except Exception:
         logger.exception("Error occurred during PowerShell task creation:")
         return jsonify({"error": "An error occurred during PowerShell task creation"}), 500
     
@@ -247,7 +251,7 @@ def start_python_task(task_id):
         os.makedirs(task_folder, exist_ok=True)
         
         # Create Dockerfile content
-        dockerfile_content = f'''
+        dockerfile_content = '''
             FROM python:3.8
 
             # Set the working directory in the container
@@ -273,7 +277,7 @@ def start_python_task(task_id):
         # Build Docker image from the task folder
         image, _ = client.images.build(
             path=task_folder,
-            dockerfile=os.path.join(task_folder, 'Dockerfile'),
+            dockerfile='Dockerfile',
             rm=True,
             tag=f"task_{task_id}"
         )
@@ -285,7 +289,7 @@ def start_python_task(task_id):
         tasks[task_id] = {'container': container, 'script_type': 'python'}
 
         return jsonify({"message": f"Task {task_id} created successfully!", "script_type": "python", "task_id": task_id})
-    except Exception as e:
+    except Exception:
         logger.exception("Error occurred during Python task creation:")
         return jsonify({"error": "An error occurred during Python task creation"}), 500    
     
@@ -335,5 +339,3 @@ def task_docker_info(task_id):
     except Exception as e:
         logger.exception('An error occurred while retrieving Docker information for task %s: %s', task_id, e)
         return jsonify({'error': 'An error occurred'}), 500
-    
-

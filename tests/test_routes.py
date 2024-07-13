@@ -1,7 +1,6 @@
 import unittest
-from flask import Flask
+
 from app import app
-import json
 
 
 class TaskRoutesTestCase(unittest.TestCase):
